@@ -299,11 +299,9 @@ class Account(models.Model):
 class Transaction(models.Model):
     message = models.CharField(max_length=100)
     wallet = models.ForeignKey(Wallet,on_delete=models.CASCADE,related_name='transaction_wallet')
-    transaction_description = models.CharField(max_length=9)
     transaction_amount = models.BigIntegerField()
     transaction_charge = models.IntegerField()
     transaction_type = models.CharField(max_length=6)
-    receipt = models.ForeignKey('Receipt',on_delete=models.CASCADE,related_name='transaction_receipt')
     origin_account = models.ForeignKey(Wallet, on_delete=models.CASCADE,related_name='transaction_origin')
     destination_account = models.ForeignKey(Wallet, on_delete=models.CASCADE,related_name='transaction_destination')
    
@@ -311,7 +309,12 @@ class Transaction(models.Model):
 
 class Card(models.Model):
     card_number= models.IntegerField()
-    card_type= models.CharField(max_length=20)
+     
+    CARD_CHOICES=(
+        ("P", "Personal Account"),
+        ("B", "Business Account"),
+    )
+    card_type= models.CharField(max_length=20,choices=CARD_CHOICES)
     expiry_date = models.DateField()
     security_code = models.IntegerField()
     date_of_issue = models.DateTimeField()
