@@ -311,8 +311,8 @@ class Card(models.Model):
     card_number= models.IntegerField()
      
     CARD_CHOICES=(
-        ("P", "Personal Account"),
-        ("B", "Business Account"),
+        ("P", "Debit Card"),
+        ("B", "Credit Card"),
     )
     card_type= models.CharField(max_length=20,choices=CARD_CHOICES)
     expiry_date = models.DateField()
