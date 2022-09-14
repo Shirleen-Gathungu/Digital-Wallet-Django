@@ -1,0 +1,13 @@
+<h1>Currency List</h1>
+<table>
+    <th>
+        <tr>Country </tr>
+        <tr>Symbol Name</tr>
+        <tr>Amount</tr>
+    </th>
+  <tr>{%for currency in Currency%}</tr>
+  <td>{{currency.country}}</td>
+  <td>{{currency.symbol_name}}</td>
+  <td>{{currency.amount}}</td>
+  {%endfor%}
+</table>

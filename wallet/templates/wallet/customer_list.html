@@ -1,0 +1,13 @@
+<h1>Customer List</h1>
+<table>
+    <th>
+        <tr>First Name </tr>
+        <tr>Age </tr>
+        <tr>Email </tr>
+    </th>
+  <tr>{%for customer in Customer%}</tr>
+  <td>{{customer.first_name}}</td>
+  <td>{{customer.age}}</td>
+  <td>{{customer.email}}</td>
+  {%endfor%}
+</table>

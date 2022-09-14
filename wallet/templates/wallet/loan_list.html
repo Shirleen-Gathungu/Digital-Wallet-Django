@@ -1,0 +1,19 @@
+<h1>Loan List</h1>
+<table>
+    <th>
+        <tr> Loan Id</tr>
+        <tr>Loan Type</tr>
+        <tr>Loan Balance</tr>
+        <tr>Amount</tr>
+        <tr>Guaranter</tr>
+        <tr>Issuer</tr>
+    </th>
+  <tr>{%for loan in Loan%}</tr>
+  <td>{{loan.loan_id}}</td>
+  <td>{{loan.loan_type}}</td>
+  <td>{{loan.loan_balance}}</td>
+  <td>{{loan.amount}}</td>
+  <td>{{loan.guaranter}}</td>
+  <td>{{loan.issuer}}</td>
+  {%endfor%}
+</table>

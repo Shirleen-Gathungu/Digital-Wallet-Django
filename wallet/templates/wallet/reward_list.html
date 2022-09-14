@@ -1,0 +1,15 @@
+<h1>Reward List</h1>
+<table>
+    <th>
+        <tr>Recipient </tr>
+        <tr>Date of Reward </tr>
+        <tr>Points</tr>
+     
+    </th>
+  <tr>{%for rewards in Reward%}</tr>
+  <td>{{reward.recipient}}</td>
+  <td>{{reward.date_of_reward}}</td>
+  <td>{{reward.points}}</td>
+  
+  {%endfor%}
+</table>

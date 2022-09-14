@@ -1,0 +1,15 @@
+<h1>Transaction List</h1>
+<table>
+    <th>
+        <tr>Transaction Type </tr>
+        <tr>Transaction Amount </tr>
+        <tr>Transaction Charge </tr>
+     
+    </th>
+  <tr>{%for transactions in Transaction%}</tr>
+  <td>{{transactions.transaction_type}}</td>
+  <td>{{transactions.transaction_amount}}</td>
+  <td>{{transactions.transaction_charge}}</td>
+  
+  {%endfor%}
+</table>

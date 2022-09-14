@@ -1,0 +1,16 @@
+<h1>Card List</h1>
+<table>
+    <th>
+        <tr>Card Type </tr>
+        <tr>Expiry Date </tr>
+        <tr>Security Code </tr>
+    </th>
+  <tr>{%for cards in Card%}</tr>
+  <td>{{cards.card_type}}</td>
+  <td>{{cards.expiry_date}}</td>
+  <td>{{cards.security_code}}</td>
+  <td>{{cards.issuer}}</td>
+  {%endfor%}
+</table>
+
+

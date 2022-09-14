@@ -1,0 +1,13 @@
+<h1>Notification List</h1>
+<table>
+    <th>
+        <tr>Date </tr>
+        <tr>Recipient </tr>
+        <tr>Title </tr>
+    </th>
+  <tr>{%for notifications in Notification%}</tr>
+  <td>{{notifications.date}}</td>
+  <td>{{notifications.recipient}}</td>
+  <td>{{notifications.title}}</td>
+  {%endfor%}
+</table>

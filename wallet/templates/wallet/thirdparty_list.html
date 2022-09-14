@@ -1,0 +1,15 @@
+<h1>Third Party List</h1>
+<table>
+    <th>
+        <tr>Issuer</tr>
+        <tr>Transaction Amount </tr>
+        <tr>Date of Issue </tr>
+     
+    </th>
+  <tr>{%for thirdparty in ThirdParty%}</tr>
+  <td>{{thirdparty.transaction_amount}}</td>
+  <td>{{thirdparty.date_of_issue}}</td>
+  <td>{{thirdparty.issuer}}</td>
+  
+  {%endfor%}
+</table>

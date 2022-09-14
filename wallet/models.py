@@ -28,9 +28,7 @@ class Customer(models.Model):
     gender=models.CharField(max_length=10,choices=GENDER_CHOICES)
     age=models.PositiveSmallIntegerField()
     profile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
-def __str__(self):
-        return '{} {}'.format(self.email,self.age,self.address)
-
+  
 class Currency(models.Model):
     COUNTRY_CHOICES = (
 ('AFG','Afghanistan'),
@@ -274,9 +272,6 @@ class Currency(models.Model):
     symbol_name= models.CharField(max_length= 20,null=True)
     amount= models.BigIntegerField()
 
-def __str__(self):
-        return '{} {}'.format(self.country,self.age,self.amount)
-
 
 class Wallet(models.Model):
     balance = models.IntegerField()
@@ -287,9 +282,6 @@ class Wallet(models.Model):
     history = models.DateTimeField()
     pin = models.IntegerField()
 
-
-def __str__(self):
-        return '{} {}'.format(self.customer,self.currency,self.date_created)
 
 class Account(models.Model):
     account_name = models.CharField(max_length=20)
@@ -302,10 +294,6 @@ class Account(models.Model):
     account_balance = models.IntegerField()
     wallet = models.ForeignKey(Wallet,on_delete=models.CASCADE,related_name='account_wallet')
 
-
-def __str__(self):
-        return '{} {}'.format(self.wallet,self.account_name,self.account_type)
-
 class Transaction(models.Model):
     message = models.CharField(max_length=100)
     wallet = models.ForeignKey(Wallet,on_delete=models.CASCADE,related_name='transaction_wallet')
@@ -315,9 +303,6 @@ class Transaction(models.Model):
     origin_account = models.ForeignKey(Wallet, on_delete=models.CASCADE,related_name='transaction_origin')
     destination_account = models.ForeignKey(Wallet, on_delete=models.CASCADE,related_name='transaction_destination')
 
-
-def __str__(self):
-        return '{} {}'.format(self.wallet,self.origin_account,self.destination_account)
 
 
 class Card(models.Model):
@@ -336,8 +321,6 @@ class Card(models.Model):
     issuer= models.CharField(max_length=10)
 
 
-def __str__(self):
-        return '{} {}'.format(self.wallet,self.account,self.issuer)
 
 class ThirdParty(models.Model):
     account= models.ForeignKey(Account,on_delete=models.CASCADE,related_name='thirdparty_account')
@@ -348,8 +331,6 @@ class ThirdParty(models.Model):
     issuer= models.CharField(max_length=20)
 
 
-def __str__(self):
-        return '{} {}'.format(self.account,self.currency,self.wallet,self.issuer)
 
 class Notification(models.Model):
     message= models.CharField(max_length=100)
@@ -357,10 +338,6 @@ class Notification(models.Model):
     recipient= models.ForeignKey(Customer,on_delete=models.CASCADE,related_name='thirdparty_recipient')
     title = models.CharField(max_length=20)
 
-
-
-def __str__(self):
-        return '{} {}'.format(self.recipient,self.date,self.title)
 
 
 class Receipt(models.Model):
@@ -372,8 +349,6 @@ class Receipt(models.Model):
     receipt_file = models.FileField()
 
 
-def __str__(self):
-        return '{} {}'.format(self.transaction,self.date,self.receipt_file)
 
 class Loan(models.Model):
     loan_id = models.IntegerField()
@@ -385,8 +360,7 @@ class Loan(models.Model):
     wallet = models.ForeignKey(Wallet,on_delete=models.CASCADE,related_name='loan_wallet')
 
 
-def __str__(self):
-        return '{} {}'.format(self.wallet,self.guaranter,self.issuer)
+  
 
 
 class Reward(models.Model):
@@ -396,6 +370,3 @@ class Reward(models.Model):
     points = models.IntegerField()
     
 
-def __str__(self):
-        return '{} {}'.format(self.transaction,self.recipient,self.points)
- 
