@@ -1,0 +1,9 @@
+<h1>{{transaction.message}} {{transaction.wallet}} </h1>
+<img src="{{transaction.profile.url}}" alt="Transaction Profile">
+<h2>{{transaction.transaction_amount}} </h2>
+<h3>{{transaction.transaction_charge}} </h3>
+<h4>{{transaction.transaction_type}} </h4>
+<h5>{{transaction.origin_account}} </h5>
+<h5>{{transaction.destination_account}} </h5>
+
+<a href="{% url 'edit_transaction' id   =transaction.id%}">Edit</a>

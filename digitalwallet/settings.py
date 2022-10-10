@@ -39,8 +39,8 @@ INSTALLED_APPS = [
    'django.contrib.messages',
    'django.contrib.staticfiles',
    "wallet",
-    "bootstrap5",
-   
+   "bootstrap5",
+   "rest_framework",  
 ]
  
  
@@ -92,7 +92,7 @@ DATABASE= {
    "USER":"Shirleen",
    "PASSWORD":"student",
    "HOST":"localhost",
-   "POBT":5432
+   "PORT":5432
 }
 }
  

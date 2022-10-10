@@ -1,6 +1,6 @@
 import imp
 from django.urls import path
-from .views import register_card, register_customer, register_notification, register_reward,register_wallet,register_transaction,register_notification,register_currency,register_thirdparty,register_loan,register_receipt,list_customers,list_card,list_wallet,list_transaction,list_notifications,list_rewards,list_currency,list_thirdparty,list_loan,list_receipt
+from .views import register_card, register_customer, register_notification, register_reward,register_wallet,register_transaction,register_notification,register_currency,register_thirdparty,register_loan,register_receipt,register_account,list_customers,list_card,list_wallet,list_transaction,list_notifications,list_rewards,list_currency,list_thirdparty,list_loan,list_receipt,customer_profile,edit_customer,wallet_profile,edit_wallet,account_profile,edit_account,list_account,card_profile,edit_card,edit_receipt,receipt_profile,edit_transaction,transaction_profile
 urlpatterns=[
     path("customer/",register_customer,name="registration"),
     path("card/",register_card,name="registration"),
@@ -12,6 +12,7 @@ urlpatterns=[
     path("thirdparty/",register_thirdparty,name="registration"),
     path("loan/",register_loan,name="registration"),
     path("receipt/",register_receipt,name="registration"),
+    path("account/",register_account,name="registration"),
     path("customer_list/",list_customers,name="registration"),
     path("card_list/",list_card,name="registration"),
     path("wallet_list/",list_wallet,name="registration"),
@@ -22,4 +23,18 @@ urlpatterns=[
     path("thirdparty_list/",list_thirdparty,name="registration"),
     path("loan_list/",list_loan,name="registration"),
     path("receipt_list/",list_receipt,name="registration"),
+    path("account_list/",list_account,name="registration"),
+    path("customer_profile/<int:id>/",customer_profile,name="customer_profile"),
+    path("edit_customer/edit/<int:id>/",edit_customer,name="edit_customer"),
+    path("wallet_profile/<int:id>/",wallet_profile,name="wallet_profile"),
+    path("edit_wallet/edit/<int:id>/",edit_wallet,name="edit_wallet"),
+    path("account_profile/<int:id>/",account_profile,name="account_profile"),
+    path("edit_account/edit/<int:id>/",edit_account,name="edit_account"),
+    path("card_profile/<int:id>/",card_profile,name="card_profile"),
+    path("edit_card/edit/<int:id>/",edit_card,name="edit_card"),
+    path("receipt_profile/<int:id>/",receipt_profile,name="receipt_profile"),
+    path("edit_receipt/edit/<int:id>/",edit_receipt,name="edit_receipt"),
+    path("transaction_profile/<int:id>/",transaction_profile,name="transaction_profile"),
+    path("edit_transaction/edit/<int:id>/",edit_transaction,name="edit_transaction"),
+    
 ]

@@ -1,0 +1,12 @@
+
+<h1>{{card.card_number}} {{card.account}} </h1>
+<img src="{{card.profile.url}}" alt="Card Profile">
+<h2>{{card.card_type}} </h2>
+<h3>{{card.expiry_date}} </h3>
+<h4>{{card.security_code}}</h4>
+<h5>{{card.date_of_issue}}</h5>
+<h6>{{card.wallet}} {{card.issuer}}</h6>
+
+<a href="{% url 'edit_card' id=card.id%}">Edit</a>
+
+

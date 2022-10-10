@@ -1,0 +1,10 @@
+<h1>{{account.account_name}} </h1>
+<img src="{{account.profile.url}}" alt="Account Profile">
+<h2>{{account.account_type}} </h2>
+<h3>{{account.account_balance}} </h3>
+<h4>{{account.account_number}}</h4>
+<h4>{{account.wallet}}</h4>
+
+<a href="{% url 'edit_account' id=accounts.id%}">Edit</a>
+
+

@@ -12,6 +12,7 @@ from .models import Currency
 from .models import ThirdParty
 from .models import Loan
 from .models import Receipt
+from .models import Account
 from django.forms import ModelForm
  
 class CustomerRegistrationForm(ModelForm):
@@ -276,3 +277,27 @@ class ReceiptRegistrationForm(ModelForm):
                 'class': 'form-control',
        })
         }
+
+class AccountRegistrationForm(ModelForm):
+    class Meta:
+        model= Account
+        fields = ['account_name','account_number','account_type','account_balance','wallet']
+        widgets={
+       'account_name' : forms.TextInput(attrs = {
+                'class': 'form-control',
+       }),
+        'account_number' : forms.TextInput(attrs = {
+                'class': 'form-control',
+       }),
+        'account_type' : forms.TextInput(attrs = {
+                'class': 'form-control',
+       }),
+       'account_balance' : forms.TextInput(attrs = {
+                'class': 'form-control',
+       }),
+       'wallet' : forms.TextInput(attrs = {
+                'class': 'form-control',
+       })
+        }
+
+      

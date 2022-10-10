@@ -30,8 +30,8 @@ class WalletAdmin(admin.ModelAdmin):
 admin.site.register(Wallet,WalletAdmin)
 
 class AccountAdmin(admin.ModelAdmin):
-    list_display =(Wallet,'account_number','account_type',)
-    search_fields = (Wallet,'account_number','account_type',)
+    list_display =(Wallet,'account_number','account_type','account_balance','account_name',)
+    search_fields = (Wallet,'account_number','account_type','account_balance','account_name',)
 admin.site.register(Account,AccountAdmin)
 
 class TransactionAdmin(admin.ModelAdmin):
